@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFSelfIR"
+		},
+		"OmPrem_SQL_connectionString": {
+			"value": ""
+		},
+		"dataLake_Conn_accountKey": {
+			"value": ""
+		},
+		"dataLake_Conn_properties_typeProperties_url": {
+			"value": "https://sacicd.dfs.core.windows.net"
+		},
+		"Azure-SSIS-IR_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "azsqlservertest.database.windows.net"
+		},
+		"Azure-SSIS-IR_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "SrvAzureAdmin"
+		},
+		"Azure-SSIS-IR_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
+		},
+		"SelfHosted-IR-Reference_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/c5844768-fed4-47de-b47e-5ff772c4cf95/resourcegroups/rg_cicd_prod/providers/Microsoft.DataFactory/factories/df-cicd-prod/integrationruntimes/SelfHostedIR"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
