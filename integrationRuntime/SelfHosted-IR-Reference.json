@@ -4,7 +4,7 @@
 		"type": "SelfHosted",
 		"typeProperties": {
 			"linkedInfo": {
-				"resourceId": "/subscriptions/c5844768-fed4-47de-b47e-5ff772c4cf95/resourcegroups/rg_cicd/providers/Microsoft.DataFactory/factories/ADFSelfIR/integrationruntimes/SelfHostedIR",
+				"resourceId": "/subscriptions/c5844768-fed4-47de-b47e-5ff772c4cf95/resourcegroups/rg_cicd_prod/providers/Microsoft.DataFactory/factories/df-cicd-prod/integrationruntimes/SelfHostedIR",
 				"authorizationType": "Rbac"
 			}
 		}
