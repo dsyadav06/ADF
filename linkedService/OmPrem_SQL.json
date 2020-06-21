@@ -6,10 +6,10 @@
 		"type": "SqlServer",
 		"typeProperties": {
 			"connectionString": "integrated security=False;data source=InstDemoMachine;initial catalog=test;user id=admin",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxODQyYWQ5Yy01ZWFlLTRmMDUtODFkYi05ODc1MWI4NDhkMzYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5OTY3MDdkZC1lZGRmLTRiMzgtOGRkYy1hYjBlMDViOGJiYTMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
-			"referenceName": "SelfHosted-IR-Reference",
+			"referenceName": "SelfHostedIR",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
