@@ -56,7 +56,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/wait')]",
+			"name": "[concat(parameters('factoryName'), '/Wait')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
