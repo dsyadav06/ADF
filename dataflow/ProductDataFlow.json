@@ -1,0 +1,39 @@
+{
+	"name": "ProductDataFlow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "dsProduct",
+						"type": "DatasetReference"
+					},
+					"name": "Product"
+				},
+				{
+					"dataset": {
+						"referenceName": "dsProductCategory",
+						"type": "DatasetReference"
+					},
+					"name": "ProductCategory"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "dsProductDestination",
+						"type": "DatasetReference"
+					},
+					"name": "ProductCategorySink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "ProductJoin"
+				}
+			],
+			"script": "source(output(\n\t\tProductId as string,\n\t\tName as string,\n\t\tProductNumber as string,\n\t\tProductCost as string,\n\t\tProductCategoryid as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> Product\nsource(output(\n\t\tProductCategoryId as string,\n\t\tProductCategoryName as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> ProductCategory\nProduct, ProductCategory join(Product@ProductCategoryid == ProductCategory@ProductCategoryId,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> ProductJoin\nProductJoin sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['ProductCategorySink.csv'],\n\tmapColumn(\n\t\tProductId,\n\t\tName,\n\t\tProductNumber,\n\t\tProductCost,\n\t\tProductCategoryid = {Product@ProductCategoryid},\n\t\tProductCategoryName\n\t),\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> ProductCategorySink"
+		}
+	}
+}
